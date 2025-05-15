@@ -1,0 +1,142 @@
+@import "tailwindcss";
+@import url("./navbar.css");
+@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+p,
+span,
+h1 {
+  font-family: "Public Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
+html {
+  scroll-behavior: smooth;
+}
+.container {
+  padding-inline: 4rem;
+}
+.bg-profile-image {
+  position: relative;
+}
+
+.bg-profile-image::before,
+.bg-profile-image::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+  border-radius: 8px;
+}
+.bg-profile-image::before {
+  /* background-color: #A2A8BB; */
+  border: 2px groove oklch(37.9% 0.146 265.522);
+  transform: translate(-30px, -25px);
+}
+.bg-profile-image::after {
+  background-color: oklch(28.2% 0.091 267.935);
+  /* border: 2px groove oklch(28.2% 0.091 267.935); */
+  transform: translate(30px, 25px);
+}
+
+.primary-btn-outline {
+  overflow: hidden !important;
+  z-index: 10;
+  all: unset;
+  display: inline-block;
+  position: relative;
+  border-radius: 32px;
+  color: var(--light-blue);
+  font-weight: 500;
+  padding: 8px 25px;
+  border: 2px solid oklch(37.9% 0.146 265.522);
+}
+.primary-btn-outline span {
+  display: inline-block;
+  position: relative;
+  z-index: 10;
+  transition: 0.3s;
+}
+.primary-btn-outline:hover span {
+  color: white !important;
+}
+.primary-btn-outline::before {
+  content: "";
+  --size: 150px;
+  position: absolute;
+  width: var(--size);
+  height: var(--size);
+  background-color: oklch(37.9% 0.146 265.522);
+  border-radius: 100%;
+  bottom: -300%;
+  left: -150%;
+  transition: 0.3s;
+  z-index: 1;
+}
+.primary-btn-outline:hover::before {
+  bottom: -100%;
+  left: -10%;
+}
+.primary-btn-outline.loading::before {
+  animation: wavePulse 1.5s infinite ease-in-out;
+}
+
+.primary-btn-outline.loading span {
+  position: relative;
+  z-index: 11;
+  color: white; /* Ensure text is visible over the animation */
+}
+
+@keyframes wavePulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0.5);
+    opacity: 0.5;
+  }
+}
+
+/* Disabled/Loading State */
+.primary-btn-outline.disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.primary-btn-outline.disabled::before {
+  display: none; /* Hide the hover effect when disabled */
+}
+
+.primary-btn-outline.loading.disabled::before {
+  display: block; /* Show the loading animation */
+  animation: wavePulse 1.5s infinite ease-in-out;
+}
+
+.shape-line svg {
+  width: 170px !important;
+  height: 170px !important;
+  object-fit: cover !important;
+}
+.shape-line {
+  position: absolute;
+  top: -30px;
+  left: -30px;
+}
+
+.shape-line-2 svg {
+  width: 150px !important;
+  height: 150px !important;
+  object-fit: cover !important;
+}
+.shape-line-2 {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+}
