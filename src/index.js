@@ -3,7 +3,7 @@ const routes = [
 	{
 		path: '/',
 		name: 'Pim Panharith',
-		component: () => import('@/views/index'),
+		component: () => import('@/views/Index'),
 		meta: {
 			page: "Pim Panharith",
 		}
