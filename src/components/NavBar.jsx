@@ -1,5 +1,6 @@
 // src/components/NavBar.jsx
 import { defineComponent, ref, onMounted, onUnmounted } from "vue";
+import { RouterLink } from "vue-router";
 
 export default defineComponent({
   setup() {
@@ -21,7 +22,7 @@ export default defineComponent({
           currentSection = section.getAttribute("id");
         }
       });
-      activeSection.value = currentSection || "about"; // Default to first section if none active
+      activeSection.value = currentSection; // Default to first section if none active
     };
 
     // Progress bar logic
@@ -30,8 +31,31 @@ export default defineComponent({
         document.documentElement.scrollHeight -
         document.documentElement.clientHeight;
       const scrolled = window.scrollY;
-      scrollProgress.value = (scrolled / scrollHeight) * 100;
+
+      // Prevent division by zero or negative scrollable height
+      if (scrollHeight <= 0) {
+        scrollProgress.value = 0; // Set progress to 0 if there's no scrollable content
+      } else {
+        scrollProgress.value = (scrolled / scrollHeight) * 100;
+      }
+
       setActiveSection(); // Update active section on scroll
+    };
+    const iconForSection = (section) => {
+      switch (section) {
+        case "about":
+          return "fa-user-tie";
+        case "education":
+          return "fa-diploma";
+        case "skills":
+          return "fa-code";
+        case "projects":
+          return "fa-window";
+        case "contact":
+          return "fa-id-badge";
+        default:
+          return "";
+      }
     };
 
     onMounted(() => {
@@ -51,32 +75,31 @@ export default defineComponent({
       }
     };
 
-    return { isNavbarOpen, activeSection, scrollProgress, toggleNavbar };
-  },
-  render() {
-    return (
-      <nav class="top-0 sticky z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 bg-white shadow-lg">
+    // return { isNavbarOpen, activeSection, scrollProgress, toggleNavbar };
+    return () => (
+      <nav class="top-0 sticky z-50 w-full flex flex-wrap items-center justify-between px-2 py-3 bg-white shadow-lg overflow-hidden">
         {/* Progress Bar */}
-        <div
-          class="absolute bottom-0 left-0 w-full h-1 bg-gray-200 z-10"
-          style={{
-            transform: `scaleX(${this.scrollProgress / 100})`,
-            transformOrigin: "left",
-          }}
-        >
-          <div class="h-full bg-blue-900"></div>
+        <div class="absolute bottom-0 left-0 w-full h-1 bg-gray-200 z-10">
+          <div
+            class="h-full bg-blue-900"
+            style={{
+              transform: `scaleX(${scrollProgress.value / 100})`,
+              transformOrigin: "left",
+              transition: "transform 0.2s ease",
+            }}
+          ></div>
         </div>
 
         <div class="container mx-auto flex flex-wrap items-center justify-between px-4 sm:px-6 lg:px-8">
           <div class="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-            <a class="font-semibold capitalize text-blue-950" href="#">
+            <RouterLink to="/" class="font-semibold capitalize text-blue-950">
               <i class="fa-duotone fa-light fa-layer-group me-2"></i>
               Pim Panharith
-            </a>
+            </RouterLink>
             <button
               class="cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
               type="button"
-              onClick={() => this.toggleNavbar()}
+              onClick={toggleNavbar}
             >
               <i class="text-blue-950 fas fa-bars"></i>
             </button>
@@ -84,63 +107,32 @@ export default defineComponent({
           <div
             class={[
               "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none",
-              this.isNavbarOpen ? "block" : "hidden",
+              isNavbarOpen.value ? "block" : "hidden",
             ].join(" ")}
             id="example-collapse-navbar"
           >
             <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-4 py-2 lg:py-0">
-              <li class="inline-block">
-                <a
-                  class={[
-                    "text-blue-950 px-3 py-2 lg:py-2 flex items-center capitalize font-semibold",
-                  ].join(" ")}
-                  href="#about"
-                >
-                  {this.activeSection === "about" && (
-                    <i class="fa-duotone fa-regular fa-user-tie me-2"></i>
-                  )}
-                  About
-                </a>
-              </li>
-              <li class="inline-block">
-                <a
-                  class={[
-                    "text-blue-950 px-3 py-2 lg:py-2 flex items-center capitalize font-semibold",
-                  ].join(" ")}
-                  href="#skills"
-                >
-                  {this.activeSection === "skills" && (
-                    <i class="fa-duotone fa-solid fa-code me-2"></i>
-                  )}
-                  Skills
-                </a>
-              </li>
-              <li class="inline-block">
-                <a
-                  class={[
-                    "text-blue-950 px-3 py-2 lg:py-2 flex items-center capitalize font-semibold",
-                  ].join(" ")}
-                  href="#projects"
-                >
-                  {this.activeSection === "projects" && (
-                    <i class="fa-duotone fa-solid fa-window me-2"></i>
-                  )}
-                  Projects
-                </a>
-              </li>
-              <li class="inline-block">
-                <a
-                  class={[
-                    "text-blue-950 px-3 py-2 lg:py-2 flex items-center capitalize font-semibold",
-                  ].join(" ")}
-                  href="#contact"
-                >
-                  {this.activeSection === "contact" && (
-                    <i class="fa-duotone fa-light fa-id-badge me-2"></i>
-                  )}
-                  Contact
-                </a>
-              </li>
+              {["about", "education", "skills", "projects", "contact"].map(
+                (section) => (
+                  <li class="inline-block" key={section}>
+                    <a
+                      className={`text-blue-950 px-3 py-2 lg:py-2 flex items-center capitalize font-semibold ${
+                        activeSection.value === section ? "text-blue-700" : ""
+                      }`}
+                      href={`#${section}`}
+                    >
+                      {activeSection.value === section && (
+                        <i
+                          className={`fa-duotone ${iconForSection(
+                            section
+                          )} me-2`}
+                        ></i>
+                      )}
+                      {section}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>

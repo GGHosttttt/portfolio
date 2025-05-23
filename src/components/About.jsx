@@ -3,6 +3,8 @@ import { defineComponent } from "vue";
 import { ref } from "vue";
 import profileImage from "../assets/images/panharith.png"; // Import the image
 import Btn from "./global/Btn";
+import wu from "@/assets/images/school/wu.png";
+import ant from "@/assets/images/school/ant.png";
 
 export default defineComponent({
   setup() {
@@ -13,7 +15,10 @@ export default defineComponent({
       loading.value = true;
       setTimeout(() => {
         loading.value = false;
-        // alert("Form submitted successfully!");
+        const link = document.createElement("a");
+        link.href = "/files/resume.pdf";
+        link.download = "Pim_Panharith_CV.pdf";
+        link.click();
       }, 2000);
     };
 
@@ -255,46 +260,54 @@ export default defineComponent({
                 Pim Panharith
               </h2>
               <p class="text-lg text-gray-700 mb-4">
-                I'm a passionate developer with expertise in Vue.js, JSX, and
-                modern web technologies.
+                I'm 3 year student from <strong>Western University</strong>, a
+                Web Developer with expertise both <strong>Frontend</strong> and
+                <strong> Backend</strong>. When it comes to development and
+                collboration, I'm able to solve problem and work sync with the
+                team.
               </p>
-              <div className="mb-3">
+              <div className="mb-5 flex gap-4">
                 <Btn
                   class="primary-btn-outline"
                   text="Resume"
                   loading={this.loading}
                   onClick={this.handleSubmit}
                 />
+                <div className="flex gap-4 items-center">
+                  <a
+                    href="https://t.me/PanharithPim"
+                    target="_blank"
+                    className="text-3xl text-blue-900"
+                  >
+                    <i class="fa-brands fa-telegram"></i>
+                  </a>
+                  <a
+                    href="mailto:pimpanharith@gmail.com"
+                    target="_blank"
+                    className="text-3xl text-blue-900"
+                  >
+                    <i class="fa-brands fa-google"></i>{" "}
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/pimpanharith/"
+                    target="_blank"
+                    className="text-3xl text-blue-900"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>{" "}
+                  </a>
+                  <a
+                    href="https://github.com/GGHosttttt"
+                    target="_blank"
+                    className="text-3xl text-blue-900"
+                  >
+                    <i class="fa-brands fa-github"></i>
+                  </a>
+                </div>
               </div>
-              <div className="flex gap-4 items-center">
-                <a
-                  href="http://"
-                  target="_blank"
-                  className="text-3xl text-blue-900"
-                >
-                  <i class="fa-brands fa-telegram"></i>
-                </a>
-                <a
-                  href="http://"
-                  target="_blank"
-                  className="text-3xl text-blue-900"
-                >
-                  <i class="fa-brands fa-google"></i>{" "}
-                </a>
-                <a
-                  href="http://"
-                  target="_blank"
-                  className="text-3xl text-blue-900"
-                >
-                  <i class="fa-brands fa-linkedin"></i>{" "}
-                </a>
-                <a
-                  href="http://"
-                  target="_blank"
-                  className="text-3xl text-blue-900"
-                >
-                  <i class="fa-brands fa-github"></i>
-                </a>
+
+              <div className="flex justify-center gap-15 border border-gray-300 bg-blue-950/9 p-3 rounded-2xl">
+                <img src={wu} alt="" className="h-[80px]" />
+                <img src={ant} alt="" className="h-[80px]" />
               </div>
             </div>
 

@@ -1,30 +1,26 @@
-// src/App.jsx
-import { defineComponent } from "vue";
+import { defineComponent, onMounted, ref } from "vue";
 import NavBar from "./components/NavBar.jsx";
-import About from "./components/About.jsx";
-import Projects from "./components/Projects.jsx";
-import Contact from "./components/Contact.jsx";
 import Footer from "./components/Footer.jsx";
-import Skills from "./components/global/Skills.jsx";
+
+import Loading from "./components/global/Loading.jsx";
 
 export default defineComponent({
+  setup() {
+    const loading = ref(true);
+
+    setTimeout(() => {
+      loading.value = false;
+    }, 0);
+    // }, 2500);
+    return { loading };
+  },
+
   render() {
     return (
       <div>
+        {this.loading && <Loading />}
         <NavBar />
-        <section id="about">
-          <About />
-        </section>
-
-        <section id="skills">
-          <Skills />
-        </section>
-        <section id="projects">
-          <Projects />
-        </section>
-        <section id="contact">
-          <Contact />
-        </section>
+        <router-view />
         <Footer />
       </div>
     );

@@ -1,32 +1,29 @@
-// src/components/Footer.jsx
 import { defineComponent } from "vue";
 
 export default defineComponent({
   render() {
     return (
-      <footer class="relative pt-8 pb-6 mt-16">
-        <div class="container mx-auto px-4">
-          <div class="flex flex-wrap items-center md:justify-between justify-center">
-            <div class="w-full md:w-6/12 px-4 mx-auto text-center">
-              <div class="text-sm text-blueGray-500 font-semibold py-1">
-                Made with{" "}
-                <a
-                  href="https://www.creative-tim.com/product/notus-js"
-                  class="text-blueGray-500 hover:text-gray-800"
-                  target="_blank"
-                >
-                  Notus JS
-                </a>{" "}
-                by{" "}
-                <a
-                  href="https://www.creative-tim.com"
-                  class="text-blueGray-500 hover:text-blueGray-800"
-                  target="_blank"
-                >
-                  Creative Tim
-                </a>
-                .
-              </div>
+      <footer class="bg-white cus-shadow border-t border-gray-300 py-5">
+        <div class="container mx-auto px-4 text-blue-950">
+          <div class="flex justify-between">
+            <div class="w-50">
+              <p>© 2025. Pim Panharith</p>
+            </div>
+            <p>
+              <strong>Under Developing</strong>
+            </p>
+            <div class="flex w-50 gap-3 items-center justify-end">
+              <span class="font-medium">Tool:</span>
+              <img
+                src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/vuejs/vuejs-original.svg"
+                class="w-7 object-contain"
+                alt="Vue"
+              />
+              <img
+                src="https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/tailwindcss/tailwindcss-plain.svg"
+                class="w-7 object-contain"
+                alt="Tailwind CSS"
+              />
             </div>
           </div>
         </div>

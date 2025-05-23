@@ -1,24 +1,98 @@
 @import "tailwindcss";
 @import url("./navbar.css");
-@import url("https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
 p,
-span,
+span {
+  font-family: "Poppins", sans-serif;
+}
+h1,
+h2,
+h3 {
+  /* font-family: "Ancizar Sans", sans-serif; */
+  
+}
 h1 {
-  font-family: "Public Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: <weight>;
-  font-style: normal;
+  --tw-tracking: var(--tracking-wider);
+  letter-spacing: var(--tracking-wider);
+
+}
+button {
+  cursor: pointer !important;
 }
 html {
   scroll-behavior: smooth;
 }
+.lang-khmer {
+  font-family: "Kantumruy Pro", sans-serif !important;
+}
+
 .container {
   padding-inline: 4rem;
 }
+
+/*======================= limit text line ========================== */
+.limit-line-3 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  overflow: hidden;
+}
+
+.limit-line-2 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+}
+
+.limit-line-1 {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+  overflow: hidden;
+}
+
+/* loading  */
+.loader {
+  font-size: 2em;
+  font-weight: 900;
+}
+
+.loader > * {
+  color: black;
+}
+
+.loader span {
+  display: inline-flex;
+}
+
+.loader span:nth-child(2) {
+  letter-spacing: -1em;
+  overflow: hidden;
+  animation: reveal 1500ms cubic-bezier(0.645, 0.045, 0.355, 1) infinite
+    alternate;
+}
+
+@keyframes reveal {
+  0%,
+  100% {
+    opacity: 0.5;
+    letter-spacing: -1em;
+  }
+  50% {
+    opacity: 1;
+    letter-spacing: 0em;
+  }
+}
+
+/*============================ about ================================*/
 .bg-profile-image {
   position: relative;
 }
-
 .bg-profile-image::before,
 .bg-profile-image::after {
   content: "";
@@ -39,7 +113,7 @@ html {
   /* border: 2px groove oklch(28.2% 0.091 267.935); */
   transform: translate(30px, 25px);
 }
-
+/* btn */
 .primary-btn-outline {
   overflow: hidden !important;
   z-index: 10;
@@ -118,7 +192,7 @@ html {
   display: block; /* Show the loading animation */
   animation: wavePulse 1.5s infinite ease-in-out;
 }
-
+/* about shape */
 .shape-line svg {
   width: 170px !important;
   height: 170px !important;
@@ -139,4 +213,141 @@ html {
   position: absolute;
   left: 50%;
   bottom: 0;
+}
+
+/* education */
+.line-date,
+.radio-control {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.radio-control {
+  z-index: 1;
+  /* top: 2px; */
+  line-height: 0px;
+  font-size: 22px;
+  background-color: white;
+  padding-block: 5px;
+}
+.line-date {
+  height: 100%;
+  margin-top: 2px;
+  background-color: #152454be;
+  width: 2px;
+} /* Smooth infinite scrolling animation (leftward) */
+@keyframes scroll-marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Smooth infinite scrolling animation (rightward) */
+@keyframes scroll-marquee-reverse {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-container::before,
+.carousel-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 80px; /* Width of the fade effect */
+  z-index: 10;
+}
+
+.carousel-container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.carousel-container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+.carousel-track {
+  display: flex;
+  width: max-content;
+}
+
+.carousel-track.animate-marquee {
+  animation: scroll-marquee 25s linear infinite;
+}
+
+.carousel-track.animate-marquee-reverse {
+  animation: scroll-marquee-reverse 25s linear infinite;
+}
+
+.carousel-track:hover {
+  animation-play-state: paused;
+}
+
+.carousel-item {
+  flex: 0 0 auto;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Optional: Add subtle shadow to images for depth */
+.carousel-item img {
+  transition: opacity 0.3s ease;
+}
+
+.carousel-item img:hover {
+  opacity: 0.8;
+}
+
+/* skill */
+
+.skill-card {
+  border: 2px groove oklch(37.9% 0.146 265.522);
+  transition: 0.2s;
+}
+.skill-card:hover {
+  box-shadow: 0px 0px 0px 3px oklch(37.9% 0.146 265.522/0.8);
+}
+.skill-icon {
+  position: relative;
+  margin-bottom: 10px;
+}
+.skill-icon i {
+  position: relative;
+  z-index: 10 !important;
+  transform: translate(10px, 10px);
+}
+.skill-icon::before {
+  content: "";
+  z-index: 1;
+  position: absolute;
+  /* left: -10px; */
+  /* top: -10px; */
+  --size: 50px;
+  width: var(--size);
+  height: var(--size);
+  background-color: #dadada;
+  border-radius: 8px;
 }

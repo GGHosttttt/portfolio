@@ -5,26 +5,48 @@ export default defineComponent({
   render() {
     return (
       <section id="contact" class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-bold text-center mb-8">Get in Touch</h2>
-          <p class="text-lg text-gray-700 max-w-2xl mx-auto text-center">
-            Reach out via{" "}
+        <div class="container mx-auto">
+          <h1 class="text-2xl font-bold mb-8">
+            <i class="fa-regular fa-user me-3"></i>Get in Touch
+          </h1>
+          <div className="flex flex-col gap-4 items-start">
             <a
-              href="mailto:example@email.com"
-              class="text-blue-500 hover:underline"
-            >
-              email
-            </a>{" "}
-            or{" "}
-            <a
-              href="https://linkedin.com"
+              href="https://t.me/PanharithPim"
               target="_blank"
-              class="text-blue-500 hover:underline"
+              className="text-blue-900"
             >
-              LinkedIn
+              <i class="fa-brands fa-telegram text-2xl me-2"></i>
+              <span className="text-lg font-medium">085 453 752</span>
             </a>
-            .
-          </p>
+            <a
+              href="mailto:pimpanharith@gmail.com"
+              target="_blank"
+              className=" text-blue-900"
+            >
+              <i class="fa-brands fa-google text-2xl me-2"></i>
+              <span className="text-lg font-medium">
+                pimpanharith@gmail.com
+              </span>
+            </a>
+            <a
+              href="https://www.linkedin.com/in/pimpanharith/"
+              target="_blank"
+              className=" text-blue-900"
+            >
+              <i class="fa-brands fa-linkedin text-2xl me-2"></i>
+              <span className="text-lg font-medium">
+                linkedin.com/in/pimpanharith/
+              </span>
+            </a>
+            <a
+              href="https://github.com/GGHosttttt"
+              target="_blank"
+              className=" text-blue-900"
+            >
+              <i class="fa-brands fa-github text-xl me-2"></i>
+              <span className="text-lg font-medium">Pim Panharith</span>
+            </a>
+          </div>
         </div>
       </section>
     );

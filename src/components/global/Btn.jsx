@@ -26,7 +26,7 @@ export default defineComponent({
       <button
         type="button"
         class={[
-          "primary-btn-outline",
+          "primary-btn-outline cursor-pointer",
           this.loading ? "loading disabled" : "",
         ].join(" ")}
         onClick={this.handleClick}
