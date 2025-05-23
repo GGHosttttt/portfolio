@@ -3,7 +3,7 @@ const routes = [
 	{
 		path: '/',
 		name: 'Pim Panharith',
-		component: () => import('@/views/index'),
+		component: () => import('@/views/Index'),
 		meta: {
 			page: "Pim Panharith",
 		}
@@ -14,7 +14,19 @@ const routes = [
 		component: () => import('@/views/ProjectDetail'),
 		meta: {
 			page: "Project",
-		}
+		},
+		beforeEnter: (to, from, next) => {
+			const id = to.params.id;
+			if (!id || id.trim() === '') {
+				next('/');
+			} else {
+				next();
+			}
+		},
+	},
+	{
+		path: '/:pathMatch(.*)*',
+		redirect: '/',
 	},
 ];
 

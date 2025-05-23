@@ -30,22 +30,22 @@ export const usePortfoliosStore = defineStore('portfolio', {
 		skills: [
 			{
 				id: 1,
-				title: 'Web Development',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-				icon: 'fa-light fa-laptop-code', // Font Awesome icon class
+				title: 'Frontend Development',
+				description: 'Build and develop user interface with Bootstrap Library and Vue.js Framework using Composition Api and Jsx. Integrate APIs with axios',
+				icon: 'fa-light fa-laptop-code',
 			},
 			{
 				id: 2,
-				title: 'Responsive Design',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-				icon: 'fas fa-mobile-alt', // Font Awesome icon class
+				title: 'Backend Development',
+				description: 'Analysis database, using mySql, develop Restful APIs using Laravel Framework',
+				icon: 'fa-light fa-server',
 			},
-			{
-				id: 3,
-				title: 'Creative Design',
-				description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-				icon: 'fas fa-paint-brush', // Font Awesome icon class
-			},
+			// {
+			// 	id: 3,
+			// 	title: 'Creative Design',
+			// 	description: '',
+			// 	icon: 'fas fa-paint-brush',
+			// },
 		],
 		projects: [
 			{
@@ -121,15 +121,15 @@ export const usePortfoliosStore = defineStore('portfolio', {
 					sos3,
 					sos4,
 				],
-				"description": "Vechch Sal is a healthcare platform developed by a team of seven during a Laravel Web Development course. It provides users with access to health-related resources, including articles and disease information. The platform features an Appointment System, enabling users to book consultations and health check-ups with doctors seamlessly. Vechch Sal aims to promote health awareness and streamline appointment scheduling for enhanced user convenience.",
+				"description": "A website provide all network service including internet, security, set up applicaton smart home and camera. That not all, selling all those network tools are our feature too, user can access network-related resources such as article and ",
 				"tools": [
-					{ "name": "User interface", "technology": "HTML, CSS + Bootstrap", "icon": "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/vuejs/vuejs-original.svg" },
-					{ "name": "Integration", "technology": "Javascript fetch APIs", "icon": "https://laravel.com/img/logomark.min.svg" }
+					{ "name": "User interface", "technology": "HTML, CSS + Bootstrap", "icon": "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/bootstrap/bootstrap-original.svg" },
 				],
 				"features": [
-					"Health information hub with articles and disease details",
-					"User-friendly appointment booking system",
-					"Multi-portal access for users, admins, and doctors"
+					"Network service: internet, network security, setup smart home, security camera",
+					"Add product Cart",
+					"Network news and resources",
+					"Responsive access devices",
 				],
 			},
 		],

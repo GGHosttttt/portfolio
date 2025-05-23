@@ -10,7 +10,7 @@ export default defineComponent({
               <p>© 2025. Pim Panharith</p>
             </div>
             <p>
-              <strong>Under Developing</strong>
+              <strong>Under Development</strong>
             </p>
             <div class="flex w-50 gap-3 items-center justify-end">
               <span class="font-medium">Tool:</span>

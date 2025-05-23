@@ -1,5 +1,6 @@
 // Vue Component
 import { usePortfoliosStore } from "@/store/portfolioStore";
+import Loading from "@/components/global/Loading";
 import { onMounted, computed, ref, onUnmounted } from "vue";
 import { useRoute } from "vue-router";
 import router from "..";
@@ -14,7 +15,6 @@ export default {
     const currentImageIndex = ref(0);
     let autoSlideInterval = null;
     const isPaused = ref(false);
-
     // Reactively get project based on projectId
     const projectData = computed(() => {
       return portfolioStore.getProjectById(projectId.value);
@@ -23,20 +23,24 @@ export default {
     onMounted(() => {
       window.scrollTo({ top: 0, behavior: "smooth" });
       if (projectData.value) {
-        project.value = projectData.value;
-        loading.value = false;
-        startAutoSlide(); // Start auto-play when component mounts
+        setTimeout(() => {
+          project.value = projectData.value;
+          startAutoSlide();
+          loading.value = false;
+          // }, 0);
+        }, 2500);
       } else {
         error.value = "Project not found";
         loading.value = false;
+        route.push("/");
       }
     });
 
     // Clean up the interval when the component is unmounted
     onUnmounted(() => {
       stopAutoSlide();
-      projectData.value = null;
-      project.value = null;
+      //   projectData.value = null;
+      //   project.value = null;
     });
 
     // Carousel navigation methods
@@ -91,6 +95,7 @@ export default {
     };
     return {
       project,
+      loading,
       currentImageIndex,
       nextImage,
       prevImage,
@@ -103,6 +108,7 @@ export default {
   render() {
     const {
       project,
+      loading,
       currentImageIndex,
       nextImage,
       prevImage,
@@ -113,6 +119,7 @@ export default {
     } = this;
     return (
       <div class=" bg-gray-100 pb-5">
+        {this.loading && <Loading />}
         <div class="container cus-shadow mx-auto py-5 pb-10">
           {project && (
             <div class="bg-white rounded-lg cus-shadow p-6 pb-10">

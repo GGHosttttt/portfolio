@@ -45,13 +45,15 @@ export default defineComponent({
           </div> */}
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             {this.projects.map((project) => (
-              <div class="bg-white card rounded-lg shadow-md overflow-hidden">
+              <div class="bg-white card card-project rounded-lg shadow-md overflow-hidden">
                 <div className="card-body">
-                  <img
-                    src={project?.images?.[0]}
-                    alt={project.title}
-                    class="w-full h-60 object-cover"
-                  />
+                  <div className="overflow-hidden">
+                    <img
+                      src={project?.images?.[0]}
+                      alt={project.title}
+                      class="w-full h-60 object-cover"
+                    />
+                  </div>
                   <div className="p-4">
                     <h2 className="text-[20px] font-semibold lang-khmer text-blue-950">
                       {project.title}
