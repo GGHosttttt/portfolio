@@ -10,8 +10,8 @@ export default defineComponent({
 
     setTimeout(() => {
       loading.value = false;
-    }, 0);
-    // }, 2500);
+    // }, 0);
+    }, 2500);
     return { loading };
   },
 
