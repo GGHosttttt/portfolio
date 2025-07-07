@@ -1,13 +1,14 @@
 // src/components/NavBar.jsx
 import { defineComponent, ref, onMounted, onUnmounted } from "vue";
-import { RouterLink } from "vue-router";
+import { RouterLink, useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 
 export default defineComponent({
   setup() {
     const isNavbarOpen = ref(false);
     const activeSection = ref(""); // Track the active section
     const scrollProgress = ref(0); // Track scroll progress (0 to 100%)
-
+    const route = useRoute();
     // Scroll spy logic
     const setActiveSection = () => {
       const sections = document.querySelectorAll("section[id]");
@@ -104,37 +105,39 @@ export default defineComponent({
               <i class="text-blue-950 fas fa-bars"></i>
             </button>
           </div>
-          <div
-            class={[
-              "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none",
-              isNavbarOpen.value ? "block" : "hidden",
-            ].join(" ")}
-            id="example-collapse-navbar"
-          >
-            <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-4 py-2 lg:py-0">
-              {["about", "education", "skills", "projects", "contact"].map(
-                (section) => (
-                  <li class="inline-block" key={section}>
-                    <a
-                      className={`text-blue-950 px-3 py-2 lg:py-2 flex items-center capitalize font-semibold ${
-                        activeSection.value === section ? "text-blue-700" : ""
-                      }`}
-                      href={`#${section}`}
-                    >
-                      {activeSection.value === section && (
-                        <i
-                          className={`fa-duotone ${iconForSection(
-                            section
-                          )} me-2`}
-                        ></i>
-                      )}
-                      {section}
-                    </a>
-                  </li>
-                )
-              )}
-            </ul>
-          </div>
+          {!route.path.includes("/projects/") && (
+            <div
+              class={[
+                "lg:flex flex-grow items-center bg-white lg:bg-opacity-0 lg:shadow-none",
+                isNavbarOpen.value ? "block" : "hidden",
+              ].join(" ")}
+              id="example-collapse-navbar"
+            >
+              <ul class="flex flex-col lg:flex-row list-none lg:ml-auto items-center space-x-4 py-2 lg:py-0">
+                {["about", "education", "skills", "projects", "contact"].map(
+                  (section) => (
+                    <li class="inline-block" key={section}>
+                      <a
+                        className={`text-blue-950 px-3 py-2 lg:py-2 flex items-center capitalize font-semibold ${
+                          activeSection.value === section ? "text-blue-700" : ""
+                        }`}
+                        href={`#${section}`}
+                      >
+                        {activeSection.value === section && (
+                          <i
+                            className={`fa-duotone ${iconForSection(
+                              section
+                            )} me-2`}
+                          ></i>
+                        )}
+                        {section}
+                      </a>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          )}
         </div>
       </nav>
     );

@@ -256,12 +256,14 @@ export default {
                           <span>Available on Youtube</span>
                         </a>
                         <br />
-                        <a href={project.website_url} target="_blank">
-                          <span>
-                            <i class="fa-solid fa-computer-mouse me-4 text-blue-800"></i>
-                            Live Demo
-                          </span>
-                        </a>
+                        {project.demo && (
+                          <a href={project.website_url} target="_blank">
+                            <span>
+                              <i className="fa-solid fa-computer-mouse me-4 text-blue-800"></i>
+                              Live Demo
+                            </span>
+                          </a>
+                        )}
                       </div>
                     </div>
                   )}

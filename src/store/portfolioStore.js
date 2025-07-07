@@ -50,6 +50,7 @@ export const usePortfoliosStore = defineStore('portfolio', {
 		projects: [
 			{
 				"id": 1,
+				'demo': false,
 				"title": "Vechch Sal (វេជ្ជសាល)",
 				"category": "Healthcare Booking Platform",
 				"yt_url": "https://youtu.be/x-3A0LSiTYE",
@@ -85,6 +86,7 @@ export const usePortfoliosStore = defineStore('portfolio', {
 			},
 			{
 				"id": 2,
+				'demo': true,
 				"title": "Loukbontor (លក់បន្ត)",
 				"category": "E-commerce",
 				"yt_url": "https://youtu.be/q8gxHi8K0zk",
@@ -111,6 +113,7 @@ export const usePortfoliosStore = defineStore('portfolio', {
 			{
 
 				"id": 3,
+				'demo':true,
 				"title": "SOSFiber",
 				"category": "Service Provider",
 				"yt_url": "https://youtu.be/UqxunswHuPc",
