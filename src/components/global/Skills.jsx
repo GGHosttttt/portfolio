@@ -18,7 +18,7 @@ export default defineComponent({
             I'm well verse in Program and Web-Development fields, develop both
             user interface and server-side
           </p>
-          <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {this.skills.map((skill) => (
               <div class="bg-white card skill-card text-blue-950 p-6 rounded-lg ">
                 <p className="skill-icon">

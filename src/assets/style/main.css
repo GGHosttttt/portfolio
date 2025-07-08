@@ -1,7 +1,9 @@
 @import "tailwindcss";
 @import url("./navbar.css");
+@import url("./media.css");
 @import url("https://fonts.googleapis.com/css2?family=Ancizar+Sans:ital,wght@0,100..1000;1,100..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
+
 p,
 span {
   font-family: "Poppins", sans-serif;
@@ -28,7 +30,6 @@ html {
 .container {
   padding-inline: 4rem;
 }
-
 /*======================= limit text line ========================== */
 .limit-line-3 {
   display: -webkit-box;
@@ -380,4 +381,26 @@ html {
 }
 .contact-link:hover::before {
   left: 0;
+}
+
+@media screen and (max-width: 767px) {
+  /* Styles for phones */
+  .container {
+    padding-inline: 2rem ;
+  }
+}
+
+/* iPads/Tablets (typically 768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  /* Styles for iPads and tablets */
+}
+
+/* Optional: iPads in portrait mode */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: portrait) {
+  /* Styles for iPads in portrait */
+}
+
+/* Optional: iPads in landscape mode */
+@media screen and (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  /* Styles for iPads in landscape */
 }

@@ -6,7 +6,7 @@ export default defineComponent({
       <footer class="bg-white cus-shadow border-t border-gray-300 py-5">
         <div class="container mx-auto px-4 text-blue-950">
           <div class="flex justify-between">
-            <div class="w-50">
+            <div class="hidden lg:block">
               <p>© 2025. Pim Panharith</p>
             </div>
             <p>

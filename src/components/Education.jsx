@@ -26,7 +26,8 @@ export default {
     ]);
     return () => (
       <div className="container mx-auto py-20">
-        <div class="grid grid-cols-2 gap-4 ">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {" "}
           <div className="">
             <h1 className="text-2xl font-bold text-gray-800 mb-3">
               <i class="fa-regular fa-diploma me-3"></i> Education

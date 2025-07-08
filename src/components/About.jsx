@@ -249,8 +249,9 @@ export default defineComponent({
             </g>
           </svg>
         </div>
-        <div class="container mx-auto px-4">
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div class="container mx-auto ">
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-custom-400 items-center">
+            {" "}
             {/* Text Section */}
             <div class="text-left ">
               <small class="uppercase font-bold text-gray-500 tracking-wider">
@@ -260,20 +261,21 @@ export default defineComponent({
                 Pim Panharith
               </h2>
               <p class="text-lg text-gray-700 mb-4">
-                I'm senior year student from <strong>Western University</strong>, a
-                Web Developer with expertise both <strong>Frontend</strong> and
+                I'm senior year student from <strong>Western University</strong>
+                , a Web Developer with expertise both <strong>Frontend</strong>{" "}
+                and
                 <strong> Backend</strong>. When it comes to development and
                 collboration, I'm able to solve problem and work sync with the
                 team.
               </p>
-              <div className="mb-5 flex gap-4">
+              <div className="mb-5 flex flex-wrap gap-4">
                 <Btn
                   class="primary-btn-outline"
                   text="Resume"
                   loading={this.loading}
                   onClick={this.handleSubmit}
                 />
-                <div className="flex gap-4 items-center">
+                <div className="col-12 flex gap-4 items-center">
                   <a
                     href="https://t.me/PanharithPim"
                     target="_blank"
@@ -305,12 +307,11 @@ export default defineComponent({
                 </div>
               </div>
 
-              <div className="flex justify-center gap-15 border border-gray-300 bg-blue-950/9 p-3 rounded-2xl">
+              <div className="flex flex-wrap justify-center row-gap-15 column-gap-5 border border-gray-300 bg-blue-950/9 p-3 rounded-2xl">
                 <img src={wu} alt="" className="h-[80px]" />
                 <img src={ant} alt="" className="h-[80px]" />
               </div>
             </div>
-
             {/* Image Section */}
             <div class="flex justify-center">
               <div className="bg-profile-image">

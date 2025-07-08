@@ -15,7 +15,7 @@ export default defineComponent({
             just want to connect, feel free to reach out. I’d love to hear from
             you!
           </p>
-          <ul className="grid grid-cols-4 gap-4 items-start">
+          <ul className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4">
             <li>
               <a
                 href="https://t.me/PanharithPim"
