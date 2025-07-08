@@ -260,7 +260,7 @@ export default defineComponent({
                 Pim Panharith
               </h2>
               <p class="text-lg text-gray-700 mb-4">
-                I'm 3 year student from <strong>Western University</strong>, a
+                I'm senior year student from <strong>Western University</strong>, a
                 Web Developer with expertise both <strong>Frontend</strong> and
                 <strong> Backend</strong>. When it comes to development and
                 collboration, I'm able to solve problem and work sync with the

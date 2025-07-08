@@ -27,26 +27,57 @@ import sos4 from '@/assets/images/projects/sosfiber/sosfiber4.png'
 
 export const usePortfoliosStore = defineStore('portfolio', {
 	state: () => ({
+		// skills: [
+		// 	{
+		// 		id: 1,
+		// 		title: 'Frontend Development',
+		// 		description: 'Build and develop user interface with Bootstrap Library and Vue.js Framework using Composition Api and Jsx. Integrate APIs with axios',
+		// 		icon: 'fa-light fa-laptop-code',
+		// 	},
+		// 	{
+		// 		id: 2,
+		// 		title: 'Backend Development',
+		// 		description: 'Analysis database and build using mySql, develop Restful APIs using Laravel Framework. Following MVC structure to provide clean and maintenance code',
+		// 		icon: 'fa-light fa-server',
+		// 	},
+		// 	// {
+		// 	// 	id: 3,
+		// 	// 	title: 'Creative Design',
+		// 	// 	description: '',
+		// 	// 	icon: 'fas fa-paint-brush',
+		// 	// },
+		// ],
 		skills: [
 			{
 				id: 1,
 				title: 'Frontend Development',
-				description: 'Build and develop user interface with Bootstrap Library and Vue.js Framework using Composition Api and Jsx. Integrate APIs with axios',
+				description:
+					'Design and build responsive user interfaces using Bootstrap and Vue.js with Composition API and JSX. Structure components using reusable composables, manage global state with Pinia, and handle API communication using Axios with interceptors.',
 				icon: 'fa-light fa-laptop-code',
 			},
 			{
 				id: 2,
 				title: 'Backend Development',
-				description: 'Analysis database, using mySql, develop Restful APIs using Laravel Framework',
+				description:
+					'Analyze and design relational databases using MySQL. Build scalable RESTful APIs with Laravel following MVC architecture, service-repository patterns, and implement authentication, validation, and error handling for maintainable and secure applications.',
 				icon: 'fa-light fa-server',
 			},
-			// {
-			// 	id: 3,
-			// 	title: 'Creative Design',
-			// 	description: '',
-			// 	icon: 'fas fa-paint-brush',
-			// },
+			{
+				id: 3,
+				title: 'Database Design',
+				description:
+					'Design normalized relational database schemas with MySQL. Define proper table relationships using primary and foreign keys, optimize queries with indexing, and ensure data integrity with constraints and migrations.',
+				icon: 'fa-light fa-database',
+			},
+			{
+				id: 4,
+				title: 'Team Leadership',
+				description:
+					'Lead and mentor a team of developers by assigning tasks, conducting code reviews, managing timelines, and ensuring collaboration through tools like Git. Facilitate technical decision-making and support team growth.',
+				icon: 'fa-light fa-users-gear',
+			}
 		],
+
 		projects: [
 			{
 				"id": 1,
@@ -113,7 +144,7 @@ export const usePortfoliosStore = defineStore('portfolio', {
 			{
 
 				"id": 3,
-				'demo':true,
+				'demo': true,
 				"title": "SOSFiber",
 				"category": "Service Provider",
 				"yt_url": "https://youtu.be/UqxunswHuPc",
