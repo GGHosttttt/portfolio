@@ -33,11 +33,22 @@ export default {
         src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/github/github-original.svg",
         alt: "GitHub",
       },
+      {
+        src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/python/python-original.svg",
+        alt: "Python",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/django.svg",
+        alt: "Django",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/tailwindcss/tailwindcss-plain.svg",
+        alt: "Tailwind CSS",
+      },
     ];
 
     return () => (
       <div class="py-5">
-
         <div class="overflow-hidden relative">
           <div class="grid grid-rows-2 gap-4">
             {/* First row (scrolls left) */}

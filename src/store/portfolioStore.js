@@ -27,26 +27,6 @@ import sos4 from '@/assets/images/projects/sosfiber/sosfiber4.png'
 
 export const usePortfoliosStore = defineStore('portfolio', {
 	state: () => ({
-		// skills: [
-		// 	{
-		// 		id: 1,
-		// 		title: 'Frontend Development',
-		// 		description: 'Build and develop user interface with Bootstrap Library and Vue.js Framework using Composition Api and Jsx. Integrate APIs with axios',
-		// 		icon: 'fa-light fa-laptop-code',
-		// 	},
-		// 	{
-		// 		id: 2,
-		// 		title: 'Backend Development',
-		// 		description: 'Analysis database and build using mySql, develop Restful APIs using Laravel Framework. Following MVC structure to provide clean and maintenance code',
-		// 		icon: 'fa-light fa-server',
-		// 	},
-		// 	// {
-		// 	// 	id: 3,
-		// 	// 	title: 'Creative Design',
-		// 	// 	description: '',
-		// 	// 	icon: 'fas fa-paint-brush',
-		// 	// },
-		// ],
 		skills: [
 			{
 				id: 1,
