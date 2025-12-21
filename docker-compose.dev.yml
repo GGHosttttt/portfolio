@@ -1,0 +1,17 @@
+services:
+  portfolio:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "5173:5173"          # Vite dev server
+    volumes:
+      - .:/app                # Sync source code for instant hot reload
+      - /app/node_modules     # Prevent host node_modules from overriding container
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Helps with file watching on some systems (WSL, Docker Desktop)
+      - VITE_ENV=development
+    command: ["npm", "run", "dev", "--", "--host", "0.0.0.0"]
+    # Optional: keep container running even if you stop it temporarily
+    stdin_open: true
+    tty: true
