@@ -5,9 +5,9 @@ services:
       dockerfile: Dockerfile.prod      # Uses the multi-stage production Dockerfile
     image: my-spa-prod:latest     # You can tag it differently if needed
     ports:
-      - "80:80"                     # Expose on host port 80 (or 8080:80 if you prefer)
+      - "81:80"                     # Expose on host port 80 (or 8080:80 if you prefer)
     restart: unless-stopped       # Good for production-like testing
     # Optional: read-only filesystem for extra security
-    read_only: true
+    # read_only: true
     # Optional: limit resources
     # mem_limit: 128m
