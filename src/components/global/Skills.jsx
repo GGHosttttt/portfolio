@@ -15,19 +15,31 @@ export default defineComponent({
             Skills
           </h1>
           <p class=" text-gray-600 mb-8">
-            I'm well verse in Program and Web-Development fields, develop both
-            user interface and server-side
+            I am well-versed in programming and web development, with experience
+            building both user interfaces and server-side systems.
           </p>
           <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
             {this.skills.map((skill) => (
-              <div class="bg-white card skill-card text-blue-950 p-6 rounded-lg ">
+              <div class="bg-white card skill-card text-blue-950 p-6 rounded-lg">
                 <p className="skill-icon">
                   <i class={skill.icon + " text-4xl mb-4"}></i>
                 </p>
-                <h3 class="text-xl font-semibold  mb-2">{skill.title}</h3>
+                <h3 class="text-xl font-semibold mb-2">{skill.title}</h3>
                 <p class="text-gray-600">{skill.description}</p>
               </div>
             ))}
+
+            {/* Extra default card */}
+            <div
+              class="bg-blue-50 border-2 border-dashed border-blue-300 
+              text-blue-800 p-6 rounded-lg flex flex-col items-center justify-center"
+            >
+              <i class="fa-light fa-plus text-4xl mb-4"></i>
+              <h3 class="text-lg font-semibold">More Coming</h3>
+              <p class="text-sm text-center mt-2">
+                Still building, learning, and expanding my skill set.
+              </p>
+            </div>
           </div>
         </div>
       </section>

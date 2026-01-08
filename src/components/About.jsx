@@ -27,7 +27,7 @@ export default defineComponent({
   render() {
     return (
       <section class="py-16 bg-gray-100 relative">
-        <div class="shape-line">
+        <div class="shape-line shape-line-1">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -138,7 +138,7 @@ export default defineComponent({
             </g>
           </svg>
         </div>
-        <div class="shape-line-2">
+        <div class="shape-line shape-line-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             version="1.1"
@@ -270,7 +270,6 @@ export default defineComponent({
               </p>
               <div className="mb-5 flex flex-wrap gap-4">
                 <Btn
-                  class="primary-btn-outline"
                   text="Resume"
                   loading={this.loading}
                   onClick={this.handleSubmit}

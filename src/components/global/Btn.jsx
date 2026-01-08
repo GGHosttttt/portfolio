@@ -24,9 +24,9 @@ export default defineComponent({
   render() {
     return (
       <button
-        type="button"
+        type="submit"
         class={[
-          "primary-btn-outline cursor-pointer",
+          "primary-btn-outline cursor-pointer ",
           this.loading ? "loading disabled" : "",
         ].join(" ")}
         onClick={this.handleClick}

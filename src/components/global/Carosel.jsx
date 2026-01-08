@@ -45,6 +45,22 @@ export default {
         src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/tailwindcss/tailwindcss-plain.svg",
         alt: "Tailwind CSS",
       },
+      {
+        src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/fastapi/fastapi-original.svg",
+        alt: "FastAPI",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/nextjs/nextjs-original.svg",
+        alt: "Next.js",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/postgresql/postgresql-original.svg",
+        alt: "PostgreSQL",
+      },
+      {
+        src: "https://cdn.jsdelivr.net/npm/devicon@2.15.1/icons/docker/docker-original.svg",
+        alt: "Docker",
+      },
     ];
 
     return () => (
