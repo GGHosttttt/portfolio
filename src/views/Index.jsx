@@ -13,8 +13,8 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         loading.value = false;
-        }, 0);
-      // }, 2500);
+        // }, 0);
+      }, 2500);
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
     return () => (
