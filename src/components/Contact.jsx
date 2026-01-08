@@ -434,7 +434,7 @@ export default defineComponent({
 
         {/* Notification Toast */}
         {this.showNotify && (
-          <div class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded shadow-lg animate-slide-in">
+          <div class="fixed bottom-5 right-5 bg-green-500 text-white px-5 py-3 rounded shadow-lg animate-slide-in z-[100]">
             {this.status}
           </div>
         )}
