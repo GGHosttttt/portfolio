@@ -14,7 +14,7 @@ export default defineComponent({
     const goToDetail = (project) => {
       router.push({
         name: "ProjectDetail",
-        params: { id: String(project.id) }, // 🔥 convert to string
+        params: { id: String(project.id) },
       });
     };
     return { projects, categories, setCategory, selectedCategory, goToDetail };
@@ -28,13 +28,13 @@ export default defineComponent({
             Portfolio
           </h1>
           <p class="text-left text-gray-600 mb-8"></p>
-          {/* <div class="flex flex-wrap gap-2 mb-8">
+          <div class="flex flex-wrap gap-2 mb-8">
             {this.categories.map((category) => (
               <button
                 class={[
-                  "px-4 py-2 text-sm font-semibold uppercase rounded",
+                  "px-4 py-2 text-sm font-medium uppercase rounded",
                   this.selectedCategory === category
-                    ? "bg-blueGray-800 text-white"
+                    ? "bg-blue-900 text-white"
                     : "bg-white text-blueGray-700 hover:bg-blueGray-200",
                 ].join(" ")}
                 onClick={() => this.setCategory(category)}
@@ -42,7 +42,7 @@ export default defineComponent({
                 {category}
               </button>
             ))}
-          </div> */}
+          </div>
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {this.projects.map((project) => (
               <div class="bg-white card card-project rounded-lg shadow-md overflow-hidden">
@@ -64,13 +64,14 @@ export default defineComponent({
                     <p className="limit-line-3 mb-3 mt-2">
                       {project.description}
                     </p>
-                    <div className=" flex justify-end">
-                      <Btn
-                        class="primary-btn-outline padding-[0px]"
-                        text="Detail"
-                        onClick={() => this.goToDetail(project)}
-                      />
-                    </div>
+                    {project.detail && (
+                      <div className="flex justify-end">
+                        <Btn
+                          text="Detail"
+                          onClick={() => this.goToDetail(project)}
+                        />
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
