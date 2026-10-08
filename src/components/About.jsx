@@ -257,9 +257,9 @@ export default defineComponent({
               <small class="uppercase font-bold text-gray-500 tracking-wider">
                 About Me
               </small>
-              <h2 class="text-4xl font-bold text-blue-900 mt-2 mb-4">
+              <h1 class="text-4xl font-bold text-blue-900 mt-2 mb-4">
                 Pim Panharith
-              </h2>
+              </h1>
               <p class="text-lg text-gray-700 mb-4">
                 I'm senior year student from <strong>Western University</strong>
                 , a Web Developer with expertise both <strong>Frontend</strong>{" "}
